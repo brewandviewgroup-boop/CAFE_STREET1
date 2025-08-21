@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Street1 - Digital Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Decorative Border Illustrations -->
+    <div class="decorative-border">
+        <!-- Top Border -->
+        <div class="border-top">
+            <div class="food-item pizza-slice" style="left: 5%;"></div>
+            <div class="food-item coffee-cup" style="left: 15%;"></div>
+            <div class="food-item bread" style="left: 25%;"></div>
+            <div class="food-item cherry" style="left: 35%;"></div>
+            <div class="food-item bottle" style="left: 45%;"></div>
+            <div class="food-item leaf" style="left: 55%;"></div>
+            <div class="food-item heart" style="left: 65%;"></div>
+            <div class="food-item cheese" style="left: 75%;"></div>
+            <div class="food-item fish" style="left: 85%;"></div>
+            <div class="food-item herb" style="left: 95%;"></div>
+        </div>
+        
+        <!-- Left Border -->
+        <div class="border-left">
+            <div class="food-item pizza-slice" style="top: 10%;"></div>
+            <div class="food-item coffee-cup" style="top: 20%;"></div>
+            <div class="food-item bread" style="top: 30%;"></div>
+            <div class="food-item cherry" style="top: 40%;"></div>
+            <div class="food-item bottle" style="top: 50%;"></div>
+            <div class="food-item leaf" style="top: 60%;"></div>
+            <div class="food-item heart" style="top: 70%;"></div>
+            <div class="food-item cheese" style="top: 80%;"></div>
+        </div>
+        
+        <!-- Right Border -->
+        <div class="border-right">
+            <div class="food-item fish" style="top: 10%;"></div>
+            <div class="food-item herb" style="top: 20%;"></div>
+            <div class="food-item pizza-slice" style="top: 30%;"></div>
+            <div class="food-item coffee-cup" style="top: 40%;"></div>
+            <div class="food-item bread" style="top: 50%;"></div>
+            <div class="food-item cherry" style="top: 60%;"></div>
+            <div class="food-item bottle" style="top: 70%;"></div>
+            <div class="food-item leaf" style="top: 80%;"></div>
+        </div>
+        
+        <!-- Bottom Border -->
+        <div class="border-bottom">
+            <div class="food-item heart" style="left: 5%;"></div>
+            <div class="food-item cheese" style="left: 15%;"></div>
+            <div class="food-item fish" style="left: 25%;"></div>
+            <div class="food-item herb" style="left: 35%;"></div>
+            <div class="food-item pizza-slice" style="left: 45%;"></div>
+            <div class="food-item coffee-cup" style="left: 55%;"></div>
+            <div class="food-item bread" style="left: 65%;"></div>
+            <div class="food-item cherry" style="left: 75%;"></div>
+            <div class="food-item bottle" style="left: 85%;"></div>
+            <div class="food-item leaf" style="left: 95%;"></div>
+        </div>
+    </div>
+
+    <div class="app">
+        <!-- Header with Logo -->
+        <header class="header">
+            <div class="container">
+                <!-- Cafe Logo -->
+                <div class="cafe-logo">
+                    <img src="logo.png" alt="Cafe Street1 Logo" class="logo-img" />
+                </div>
+                
+                <!-- Central Circular Menu Title
+                <div class="menu-circle">
+                    <div class="circle-content">
+                        <h1 class="menu-title">DIGITAL</h1>
+                        <h2 class="menu-subtitle">MENU</h2>
+                    </div>
+                </div> -->
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search our delicious menu...">
+                </div>
+                
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="veg">
+                        <span class="veg-indicator"></span>
+                        Vegetarian
+                    </button>
+                    <button class="filter-btn" data-filter="non-veg">
+                        <span class="non-veg-indicator"></span>
+                        Non-Vegetarian
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="category-nav">
+            <div class="container">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-category="all">All Delights</button>
+                    <button class="nav-tab" data-category="burgers">Burgers</button>
+                    <button class="nav-tab" data-category="pizza">Pizza</button>
+                    <button class="nav-tab" data-category="pasta">Pasta & Spaghetti</button>
+                    <button class="nav-tab" data-category="sandwiches">Sandwiches & Wraps</button>
+                    <button class="nav-tab" data-category="chinese">Chinese & Asian</button>
+                    <button class="nav-tab" data-category="snacks">Snacks & Appetizers</button>
+                    <button class="nav-tab" data-category="momos">Momos</button>
+                    <button class="nav-tab" data-category="breads">Breads & Sides</button>
+                    <button class="nav-tab" data-category="beverages">Beverages</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <div class="loading-circle">
+                        <p>Preparing your menu...</p>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="noResults" class="no-results hidden">
+                    <div class="no-results-content">
+                        <p>Sorry, we couldn't find what you're looking for.</p>
+                        <p>Try searching for something else!</p>
+                    </div>
+                </div>
+
+                <!-- Menu Grid -->
+                <div id="menuGrid" class="menu-grid">
+                    <!-- Menu items will be dynamically inserted here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="logo-shape small">
+                            <span class="logo-text">CAFE STREET1</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">Serving happiness, one bite at a time</p>
+                    <p class="copyright">&copy; 2025 Cafe Street1. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
